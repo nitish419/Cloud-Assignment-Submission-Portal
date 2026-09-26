@@ -1,0 +1,97 @@
+To upload your project to GitHub cleanly and professionally without pushing temporary test files, database files, or virtual environments, follow these exact steps.
+
+---
+
+### Step 1: Create a `.gitignore` File
+
+Before initializing Git, create a `.gitignore` file in your root folder (`Cloud-Assignment-Portal`) to prevent pushing unwanted files (`venv`, database, test uploads) to GitHub.
+
+1. In VS Code, create a new file named `.gitignore` in your root folder.
+2. Paste the following contents into it and save:
+
+```text
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# Database & Storage
+backend/cloud_portal.db
+*.db
+uploads/*
+!uploads/.gitkeep
+
+# Environment Variables & IDE
+.env
+.vscode/
+.idea/
+
+```
+
+3. Inside your `uploads/` folder, create an empty file named `.gitkeep` so GitHub retains the folder structure without uploading test files.
+
+---
+
+### Step 2: Initialize Git and Make Your First Commit
+
+Open a terminal tab in VS Code (at the project root `Cloud-Assignment-Portal`) and run:
+
+```powershell
+# 1. Initialize Git repository
+git init
+
+# 2. Set default branch to main
+git branch -M main
+
+# 3. Stage all project files
+git add .
+
+# 4. Commit files with a professional message
+git commit -m "feat: initial commit for cloud student assignment submission portal"
+
+```
+
+---
+
+### Step 3: Create a New Repository on GitHub
+
+1. Go to [GitHub.com](https://github.com?utm_source=gemini) and log in.
+2. Click the **`+`** icon at the top right and select **New repository**.
+3. Fill in the details:
+* **Repository name:** `Cloud-Assignment-Submission-Portal`
+* **Description:** `Cloud-based student assignment submission and feedback portal featuring role-based authentication, cloud database integration, simulated object storage, and grading workflows.`
+* **Visibility:** Public
+* **Initialize repository:** Leave all checkboxes (*Add a README*, *Add .gitignore*, *Choose a license*) **UNCHECKED**.
+
+
+4. Click **Create repository**.
+
+---
+
+### Step 4: Connect Local Project to GitHub and Push
+
+Copy the commands provided on the GitHub repository page (or copy the ones below, replacing `YOUR_GITHUB_USERNAME` with your actual username):
+
+```powershell
+# Add remote origin link
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/Cloud-Assignment-Submission-Portal.git
+
+# Push your code to GitHub
+git push -u origin main
+
+```
+
+---
+
+### Step 5: Enhance GitHub Visibility (For Recruiters)
+
+Once uploaded, configure your GitHub repository page:
+
+1. Click the **Gear icon** (⚙️) next to **About** on the top right of your repository page.
+2. Add these tags under **Topics**:
+`cloud-computing` `fastapi` `python` `rest-api` `role-based-access-control` `jwt-authentication` `object-storage` `sqlite`
+3. Check the box **Include in home page** and click **Save changes**.
